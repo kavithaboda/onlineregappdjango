@@ -1,0 +1,21 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+    {% include 'adminmainmenu.html' %}
+    <form action="{% url "updated_schedule" %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="2">
+    <tr>
+        <th colspan="2" style="background-color:darkkhaki;font-size: 35px;font-family: 'Agency FB';text-align: center">Update Course Details</th>
+    </tr>
+    {% if data %}
+        <tr><th>Course Name :</th><th><input type="text" name="coursename" value={{ data.Coursename }}></th></tr>
+        <tr><th>Faculty   : </th><th> <input type="text" name="faculty" value={{ data.Faculty }}></th></tr>
+        <tr><th>Date     :</th><th><input type="date" name="date" value="{{ data.Date }}"></th></tr>
+        <tr><th>Time     :</th><th><input type="time" name="time" value="{{ data.Time }}"></th></tr>
+        <tr><th>Fee   :</th><th><input type="text" name="fee" value="{{ data.Fee }}"></th></tr>
+        <tr><th>Duration :</th><th><input type="text" name="duration" value="{{ data.Duration }}"></th></tr>
+        <tr><th colspan="2"><button type="submit" class="btn btn-secondary btn-lg btn-block">Update</button></th></tr>
+    {% endif %}
+    </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+
+
+    <table align="center" border="2">
+        <tr>
+        <th>CourseName</th>
+        <th>Faculty</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Fee</th>
+        <th>Duration</th>
+        <th>Enroll</th>
+    </tr>
+    {% for x in dataa%}
+<tr>
+      <th>{{ x.Coursename }}</th>
+      <th>{{ x.Faculty }}</th>
+      <th>{{ x.Date }}</th>
+      <th>{{ x.Time }}</th>
+      <th>{{ x.Fee }}</th>
+      <th>{{ x.Duration }}</th>
+        <th><a href="{% url 'enrolling_process' %}?cid={{ x.idno }}">yes</a></th>
+{% endfor %}
+</tr>
+     </table>
+{% endblock %}
+<th><a href="{% url 'enrol_course' %}?sname={{ x.Name }}"> Enrol the Course</a></th>

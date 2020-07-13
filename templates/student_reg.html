@@ -1,0 +1,16 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+    {%  include 'regloginaboutcnctmenu.html' %}
+    <Marquee>Welcome to Python with Naveen</Marquee>
+    <form action="{% url 'student_registred_process' %}"method="post">
+    {% csrf_token %}
+    <table align="center"><tr>
+        <th colspan="2"style="background-color:darkkhaki;font-size: 35px;font-family: 'Agency FB';text-align: center">Student Registration</th>
+    </tr>
+    <tr><th>
+        {{ form.as_table }}
+    </th></tr>
+    <tr><th colspan="2"><button type="submit" class="btn btn-secondary btn-lg btn-block">Register</button> </th></tr>
+    </table>
+    </form>
+{% endblock %}

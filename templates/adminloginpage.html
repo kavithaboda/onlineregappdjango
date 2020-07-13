@@ -1,0 +1,23 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+    <form action="{% url 'adminvalidation' %}" method="post">
+    {% csrf_token %}
+    <table align="center" border="0">
+          {% for x in messages%}
+            <tr><th colspan="2" style="text-align: center;font-size: 30px;background-color: maroon;color: white">{{ x }}</th></tr>
+        {% endfor%}
+    <tr><th style="text-align: center;font-size: 30px;background-color: darkgrey;color: white" colspan="2">Admin Login</th></tr>
+    <tr><th>Username:</th>
+        <th><input type="text" required name="a1"></th>
+    </tr>
+    <tr>
+        <th>Password:</th>
+        <th><input type="password" required name="a2"></th>
+    </tr>
+    <tr>
+        <th colspan="2"><button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button></th>
+    </tr>
+    </table>
+    </form>
+{% endblock %}
+

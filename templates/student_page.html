@@ -1,0 +1,17 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+    <table align="center" border="2">
+    <tr>
+        {% for x in data %}
+        <th><a href="{% url 'enrol_course' %}?sco={{ x.Contactno }}&sid={{ x.idno }}"> Enrol the Course</a></th>
+            <th><a href="{% url 'Viewall_the_enrolled_courses' %}"> View all the enrolled courses</a></th>
+        <th>Cancel the enrolled courses</th>
+    </tr>
+    <tr><th colspan="3"><h5>Welcome</h5></th></tr>
+    <tr>
+        <th colspan="3">
+            <h1>Mr/Mrs:{{ x.Name }}</h1>
+        {% endfor %}</th>
+    </tr>
+    </table>
+{% endblock %}

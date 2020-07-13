@@ -1,0 +1,15 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+<table align="center" border="2">
+<tr><th>Studentcontactno</th>
+<th>Courseid</th>
+</tr>
+
+    {% for x in data %}
+        <tr>
+        <th>{{ x.studentcontctno }}</th>
+            <th>{{ x.courseid }}</th></tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

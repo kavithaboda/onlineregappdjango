@@ -1,0 +1,29 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+    {% load static %}
+    <table width="100%">
+    {% if data %}
+        <tr>
+            <th><Marquee>Welcome Mr/Mrs:   {{data}}</Marquee></th>
+        </tr>
+    {% endif %}
+</table>
+   {% include 'adminmainmenu.html' %}
+    <table align="center">
+    <tr>
+        <th>
+            <img src="{% static 'images/bc.jpg'  %}" width="500">
+        </th>
+    </tr>
+    </table>
+
+
+
+{#    <table align="center" border="2">#}
+{#    <tr>#}
+{#        <th><a href="{% url 'schedule_new_class' %}"> Schedule New Class</a></th>#}
+{##}
+{#        <th><a href="{% url 'View_all_Scheduled_classes' %}"> View All Schedule classes</a></th>#}
+{#    </tr>#}
+{#    </table>#}
+{% endblock %}

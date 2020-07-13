@@ -1,0 +1,12 @@
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'schedule_new_class' %}">Schedule New Class</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'View_all_Scheduled_classes' %}">View All Schedule classes <span class="sr-only">(current)</span></a>
+    </div>
+  </div>
+    <a class="nav-item nav-link active type" href="{% url 'admin_logout' %}">Logout</a>
+</nav>

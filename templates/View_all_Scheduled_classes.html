@@ -1,0 +1,39 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block  sowmya%}
+  {% include 'adminmainmenu.html' %}
+
+    <table align="center" border="2">
+{% for x in messages %}
+    <tr><th colspan="8" style="background-color:green;font-size: 35px;font-family: 'Agency FB';text-align: center">{{ x }}</th></tr>
+    {% endfor %}
+    <tr>
+        <th colspan="8" style="background-color:darkkhaki;font-size: 35px;font-family: 'Agency FB';text-align: center">View All Schedule classes</th>
+    </tr>
+
+    <tr>
+        <th>CourseName</th>
+        <th>Faculty</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Fee</th>
+        <th>Duration</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+<tr>
+    {% for x in data %}
+
+      <th>{{ x.Coursename }}</th>
+      <th>{{ x.Faculty }}</th>
+      <th>{{ x.Date }}</th>
+      <th>{{ x.Time }}</th>
+      <th>{{ x.Fee }}</th>
+      <th>{{ x.Duration }}</th>
+        <th><a href="{% url 'update_viewall_admin' %}?coursename={{ x.Coursename }}"><button type="submit">yes</button> </a></th>
+        <th><a href="{% url 'delete_viewall_admin' %}?coursename={{ x.Coursename }}"} ><img src="{% static 'images/delete.png' %}" width="15" height="15" ></a> </th>
+      </tr>
+{% endfor %}
+    </table>
+{% endblock %}
+

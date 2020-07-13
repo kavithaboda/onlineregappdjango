@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+      <style>
+     a:link { color:maroon;text-decoration: none; }
+    a:visited { color:black; }
+    {#a:hover { color:maroon; background-color:wheat;}#}
+     </style>
+  </head>
+  <body>
+
+  <div style="height: 100%">
+
+<table align="center" border="2" width="100%">
+    <tr>
+        <th colspan="2" style="background-color: goldenrod;font-size: 50px;font-family: 'Agency FB'">
+            <ul class="nav justify-content-center">
+  <li class="nav-item">
+      <a class="nav-link active" href="{% url "student_login" %}">Python with Naveen</a>
+  </li></ul>
+        </th>
+    </tr>
+<tr>
+    <th>
+        {% block sowmya %}
+        {% endblock %}
+    </th>
+</tr>
+<tfoot>
+<tr>
+    <th  class="nav-item" style="background-color: goldenrod;font-size: 20px;font-family: 'Agency FB';text-align: center">copyright@pythonwithNaveen</th>
+</tr>
+</tfoot>
+</table>
+  </div>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
