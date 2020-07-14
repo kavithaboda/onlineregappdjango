@@ -1,0 +1,43 @@
+{% extends 'common.html' %}
+{% block sowmya %}
+    {% include 'studentmainmenu.html' %}
+    <table align="center" border="2">
+    <tr>
+        {% for x in messages %}
+          <th colspan="7" style="text-align: center;background-color: maroon;color: white;font-size: 30px">{{ x }}</th>
+        {% endfor %}
+
+    </tr>
+     <tr><th colspan="7" style="font-size: 30px;background-color: burlywood;padding: 10px;text-align: center" >Cancel Enrole Courses</th></tr>
+
+        <tr>
+        <th>CourseName</th>
+        <th>Faculty</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Fee</th>
+        <th>Duration</th>
+        <th>Enroll</th>
+    </tr>
+    {% for x in data%}
+<tr>
+      <th>{{ x.Coursename }}</th>
+      <th>{{ x.Faculty }}</th>
+      <th>{{ x.Date }}</th>
+      <th>{{ x.Time }}</th>
+      <th>{{ x.Fee }}</th>
+      <th>{{ x.Duration }}</th>
+      <form action="{% url 'cancelling_enrolled_course' %}" method="post">
+      {% csrf_token %}
+      <th><input type="hidden" value="{{ x.idno }}" name= "cno" >
+         <input type="hidden" value="{{ request.session.contact }}" name="contact">
+          <button type="submit">Cancel</button></th>
+      </form></tr>
+    {% endfor %}
+{##}
+{#        <th><a href="{% url 'enrolling_process' %}?cid={{ x.idno }}&sco={{ sco }}">yes</a></th>#}
+{#{% endfor %}#}
+{#</tr>#}
+{#     </table>#}
+{% endblock %}
+<th><a href="{% url 'enrol_course' %}?sname={{ x.Name }}"> Enrol the Course</a></th>

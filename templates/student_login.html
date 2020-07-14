@@ -4,7 +4,16 @@
     <Marquee>Login For More Updates</Marquee>
     <form action="{% url 'student_page' %}" method="post">
     {% csrf_token %}
-    <table align="center" border="2">
+    <table align="center" border="2"  style="padding-top: 150px">
+        {%  if messages %}
+        {% for x in messsages %}
+            <tr>
+            <th>
+                {{ x }}
+            </th>
+            </tr>
+        {% endfor %}
+    {% endif %}
         <tr><th colspan="2" style="background-color:darkkhaki;font-size: 35px;font-family: 'Agency FB';text-align: center">User Login Page</th></tr>
     <tr>
         <th>UserName:</th><th><input type="text" required name="s1"></th>

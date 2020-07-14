@@ -1,15 +1,32 @@
 {% extends 'common.html' %}
 {% block sowmya %}
-<table align="center" border="2">
-<tr><th>Studentcontactno</th>
-<th>Courseid</th>
-</tr>
+    {% include 'studentmainmenu.html' %}
+     {% if not data %}
+         No courses are enrolled
+         {% else %}
+         <table align="center" border="2">
+         <tr><th colspan="7" style="font-size: 30px;background-color: burlywood;padding: 10px;text-align: center" >Viewall Enrolled Courses</th></tr>
 
-    {% for x in data %}
+          <tr style="font-family: 'Agency FB';font-size: 25px;background-color: forestgreen;text-align: center">
+          <th scope="col">Name</th>
+          <th scope="col">Faculty</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Fee</th>
+          <th scope="col">Duration</th>
+        </tr>
+      <tbody>
+      {% for x in data %}
         <tr>
-        <th>{{ x.studentcontctno }}</th>
-            <th>{{ x.courseid }}</th></tr>
-    {% endfor %}
+          <th scope="row">{{ x.Coursename }}</th>
+          <td>{{ x.Faculty }}</td>
+          <td>{{ x.Date }}</td>
+          <td>{{ x.Time }}</td>
+          <td>{{ x.Fee }}</td>
+          <td>{{ x.Duration }}</td>
+        </tr>
+         {% endfor %}
+         </table>
+    {% endif %}
 
-</table>
 {% endblock %}

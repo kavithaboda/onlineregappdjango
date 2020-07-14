@@ -29,5 +29,6 @@ urlpatterns = [
         path('enrolling_process/',views.enrolling_process,name="enrolling_process"),
         path('Viewall_the_enrolled_courses/',views.Viewall_the_enrolled_courses,name="Viewall_the_enrolled_courses"),
        path('cancel_enrolled_courses/',views.cancel_enrolled_courses,name="cancel_enrolled_courses"),
-       path('student_logout/',views.student_logout,name="student_logout")
+       path('student_logout/',views.student_logout,name="student_logout"),
+       path('cancelling_enrolled_course/',views.cancelling_enrolled_course,name="cancelling_enrolled_course")
 ]

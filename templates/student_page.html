@@ -1,17 +1,47 @@
 {% extends 'common.html' %}
 {% block sowmya %}
-    <table align="center" border="2">
+    {% load static %}
+ {% include 'studentmainmenu.html' %}
+{#    <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#  <a class="navbar-brand" href="{% url 'enrol_course' %}">Enrol the Course</a>#}
+{#  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">#}
+{#    <span class="navbar-toggler-icon"></span>#}
+{#  </button>#}
+{#  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">#}
+{#    <div class="navbar-nav">#}
+{#      <a class="nav-item nav-link active" href="{% url 'Viewall_the_enrolled_courses' %}">View all the enrolled courses <span class="sr-only">(current)</span></a>#}
+{#      <a class="nav-item nav-link" href="#">Cancel the enrolled courses</a>#}
+{#        <span class="navbar-text">#}
+{#      Navbar text with an inline element#}
+{#    </span>#}
+{#    </div>#}
+{##}
+{#  </div>#}
+</nav>
+    <Marquee>Enrole the Courses</Marquee>
+     <div align="right">
+         <img src="{% static 'images/available courses.jpg' %} "width="300" height="100">
+     </div>
+
+     <table align="right" border="2">
+{%  for x in courses %}
+     <tr>
+         <th style="background-color: burlywood;color:green;font-size: 30px;font-family: 'Agency FB';padding: 15px;">{{ x.Coursename }}</th>
+     </tr>
+      {% endfor %}
+     </table>
+
+     <table align="center" border="0">
     <tr>
-        {% for x in data %}
-        <th><a href="{% url 'enrol_course' %}?sco={{ x.Contactno }}&sid={{ x.idno }}"> Enrol the Course</a></th>
-            <th><a href="{% url 'Viewall_the_enrolled_courses' %}"> View all the enrolled courses</a></th>
-        <th>Cancel the enrolled courses</th>
-    </tr>
-    <tr><th colspan="3"><h5>Welcome</h5></th></tr>
-    <tr>
-        <th colspan="3">
-            <h1>Mr/Mrs:{{ x.Name }}</h1>
-        {% endfor %}</th>
+        <th colspan="3" style="text-align: center"><h1>Welcome Mr/Mrs:{{ data.Name }}</h1></th>
     </tr>
     </table>
+<div align="center">
+    <img src="{% static 'images/welcom.jpg' %}" width="350" height="300"></div>
+    <table align="right" border="2">
+    <tr><th>Available Courses</th>
+    </table>
+    <div align="right">
+
+    </div>
 {% endblock %}

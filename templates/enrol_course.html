@@ -1,9 +1,15 @@
 {% extends 'common.html' %}
 {% block sowmya %}
-
-
+    {% include 'studentmainmenu.html' %}
     <table align="center" border="2">
-        <tr>
+    <tr>
+        {% for x in messages %}
+          <th colspan="7" style="text-align: center;background-color: maroon;color: white;font-size: 30px">{{ x }}</th>
+        {% endfor %}
+    </tr>
+    <tr><th colspan="7" style="font-size: 30px;background-color: burlywood;padding: 10px;text-align: center" >Enrole Courses</th></tr>
+
+        <tr style="font-family: 'Agency FB';font-size: 25px;background-color: forestgreen;text-align: center">
         <th>CourseName</th>
         <th>Faculty</th>
         <th>Date</th>
@@ -12,7 +18,7 @@
         <th>Duration</th>
         <th>Enroll</th>
     </tr>
-    {% for x in dataa%}
+    {% for x in data%}
 <tr>
       <th>{{ x.Coursename }}</th>
       <th>{{ x.Faculty }}</th>
@@ -20,9 +26,17 @@
       <th>{{ x.Time }}</th>
       <th>{{ x.Fee }}</th>
       <th>{{ x.Duration }}</th>
-        <th><a href="{% url 'enrolling_process' %}?cid={{ x.idno }}">yes</a></th>
-{% endfor %}
-</tr>
-     </table>
+      <form action="{% url 'enrolling_process' %}" method="post">
+      {% csrf_token %}
+      <th><input type="hidden" value="{{ x.idno }}" name= "cno" >
+         <input type="hidden" value="{{ request.session.contact }}" name="contact">
+          <button type="submit">Enroll</button></th>
+      </form></tr>
+    {% endfor %}
+{##}
+{#        <th><a href="{% url 'enrolling_process' %}?cid={{ x.idno }}&sco={{ sco }}">yes</a></th>#}
+{#{% endfor %}#}
+{#</tr>#}
+{#     </table>#}
 {% endblock %}
 <th><a href="{% url 'enrol_course' %}?sname={{ x.Name }}"> Enrol the Course</a></th>
